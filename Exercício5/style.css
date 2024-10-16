@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#telaPrincipal{
+    width: 100%;
+    height: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D2D2EE;
+}
+#nomeFormaGeometrica{
+    font-size: 40px;
+    font-family: Arial, Helvetica;
+    color: rgb(0, 0, 0);
+    display: none;
+}
+.imagens{
+    width: 500px;
+    height: 500px;
+    display:none;
+}
+#conteiner{
+ display: flex;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ justify-content: top,left;
+ aligntex
+border-radius: 50cm;
+background-color: #696AC9;
+    
+}
