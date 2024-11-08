@@ -1,40 +1,82 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import './App.css';
 
-//Função principal do aplicativo
-const app = () =>{
-  //Estados para armazenar o nome de usuário e a senha
+function App() {
+  // Estados para armazenar o nome de usuário e a senha
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [address, setAddress] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
 
-  //Função que é chamada quando o botão de login é pressionado
-  const handleLogin = () => {
-    //Aqui, você poderia adicionar a lógica para autenticar o usuário
-    alert(`Usuário: ${username}\nSenha: ${password} `);
+  // Função chamada ao clicar no botão de login
+  const handleRegister = () => {
+    alert(`Nome: ${username}\nEndereço: ${address}\nEmail: ${email}\nTelefone: ${phone}`);
+  };
+
+  const handleClear = () => {
+    setUsername('');
+    setAddress('');
+    setEmail('');
+    setPhone('');
   };
 
   return (
-    // Conteiner principal que centraliza o conteúdo
-    <View style={styles.container}>
-      <Text style={styles.title}>Tela de Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder = "Nome de usuário"
-        value={username}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder = "Senha"
-        secureTextIntry={true}
-        value={password}
-        onChangeText={setPassword} //Atualiza o estado da senha
-      />
-      <Button title="Entrar" onPress={handleLogin} />{/* Botão de Login */}
-    </View>
-  );
-};
+    <div className="App">
+    <h1>Tela de Login</h1>
+      
+      <div className="form-container">
+        <label>
+          Nome:
+          <input 
+            type="text" 
+            value={username}
+            onChange={(e) => setUsername(e.target.value)} 
+            placeholder="Digite seu nome"
+          />
+        </label>
+        <br />
 
+        <label>
+          Endereço:
+          <input 
+            type="text" 
+            value={address}
+            onChange={(e) => setAddress(e.target.value)} 
+            placeholder="Digite seu endereço"
+          />
+        </label>
+        <br />
+
+        <label>
+          Email:
+          <input 
+            type="email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} 
+            placeholder="Digite seu email"
+          />
+        </label>
+        <br />
+
+        <label>
+          Telefone:
+          <input 
+            type="tel" 
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)} 
+            placeholder="Digite seu telefone"
+          />
+        </label>
+        <br />
+        
+        <button onClick={handleRegister}>Cadastrar</button>
+        <button onClick={handleClear}>Limpar</button>
+      </div>
+    </div>
+  );
+}
+
+/*
 //Definição dos estilos
 const styles = StyleSheet.create({
   container: {
@@ -57,5 +99,5 @@ const styles = StyleSheet.create({
     width: '80%', //Lagura do campo de entrada
   },
 })
-
+*/
 export default App;
